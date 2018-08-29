@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HotKeyCollectionViewCell" id="gTV-IL-0wX" customClass="HotKeyCollectionViewCell" customModule="HomeTest_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-dl-VQH">
+                        <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-AZ-wxB">
+                                <rect key="frame" x="0.0" y="0.0" width="237" height="170.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH7-j0-50u">
+                                <rect key="frame" x="0.0" y="180.5" width="237" height="90.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cZ-7U-tpt">
+                                        <rect key="frame" x="16" y="8" width="205" height="74.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4cZ-7U-tpt" secondAttribute="trailing" constant="16" id="HNI-vI-cae">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="constraintValue">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="4cZ-7U-tpt" firstAttribute="top" secondItem="mH7-j0-50u" secondAttribute="top" constant="8" id="ZSh-3m-whm">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="constraintValue">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="4cZ-7U-tpt" secondAttribute="bottom" constant="8" id="c6h-Xh-Vva">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="constraintValue">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="4cZ-7U-tpt" firstAttribute="leading" secondItem="mH7-j0-50u" secondAttribute="leading" constant="16" id="xmP-Gf-65S">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="constraintValue">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mH7-j0-50u" secondAttribute="bottom" id="5nn-K6-Ng8"/>
+                            <constraint firstAttribute="trailing" secondItem="mH7-j0-50u" secondAttribute="trailing" id="TWh-9J-PXY"/>
+                            <constraint firstItem="SNn-AZ-wxB" firstAttribute="top" secondItem="3R5-dl-VQH" secondAttribute="top" id="c01-pF-viC"/>
+                            <constraint firstAttribute="trailing" secondItem="SNn-AZ-wxB" secondAttribute="trailing" id="dHV-EJ-8kl"/>
+                            <constraint firstItem="mH7-j0-50u" firstAttribute="leading" secondItem="3R5-dl-VQH" secondAttribute="leading" id="fJR-6K-rIB"/>
+                            <constraint firstItem="SNn-AZ-wxB" firstAttribute="leading" secondItem="3R5-dl-VQH" secondAttribute="leading" id="gpo-6G-IED"/>
+                            <constraint firstItem="SNn-AZ-wxB" firstAttribute="centerX" secondItem="3R5-dl-VQH" secondAttribute="centerX" id="k8t-ff-R3y"/>
+                            <constraint firstItem="mH7-j0-50u" firstAttribute="top" secondItem="SNn-AZ-wxB" secondAttribute="bottom" constant="10" id="mFl-P1-GVC">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="constraintValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="SNn-AZ-wxB" firstAttribute="height" secondItem="mH7-j0-50u" secondAttribute="height" multiplier="2" constant="-10" id="w9P-pQ-NCZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3R5-dl-VQH" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="1YX-n2-Fcy"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="3R5-dl-VQH" secondAttribute="trailing" id="bYd-Sy-CrF"/>
+                <constraint firstItem="3R5-dl-VQH" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="pEC-kb-SMC"/>
+                <constraint firstAttribute="bottom" secondItem="3R5-dl-VQH" secondAttribute="bottom" id="w2Y-4U-cZx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="237" height="271"/>
+            <connections>
+                <outlet property="iconImageView" destination="SNn-AZ-wxB" id="uTw-2U-UXr"/>
+                <outlet property="keywordLabel" destination="4cZ-7U-tpt" id="1nT-Rn-sq1"/>
+                <outlet property="keywordView" destination="mH7-j0-50u" id="13h-Ld-XXD"/>
+            </connections>
+            <point key="canvasLocation" x="88.5" y="235.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
