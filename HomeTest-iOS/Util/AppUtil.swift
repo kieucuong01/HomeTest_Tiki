@@ -41,17 +41,25 @@ final class AppUtil {
             alpha: CGFloat(1.0)
         )
     }
-
     
-    static func getStringDateFromTime(time: Double?, with formatDate: String) -> String {
-        if let miliseconds: Double = time {
-            let seconds: Double = miliseconds / 1000.0
-            let date: Date = Date(timeIntervalSince1970: seconds)
-            let formatter: DateFormatter = DateFormatter()
-            formatter.dateFormat = formatDate
-            return formatter.string(from: date)
+    // Width of content collection view cell
+    static func caculateWidthForCollectionCell(keyword: String) -> CGFloat {
+        if AppUtil.getNumberOfWord(text: keyword) == 1 {
+            let widthKeyword : CGFloat = keyword.width(font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
+            return widthKeyword
         }
-        else { return "-" }
+        else {
+            let chars = Array(keyword)
+            var newLinePosition : Int = 0
+            for i in chars.count/2...chars.count{
+                if chars[i] == Character.init(" ") {
+                    newLinePosition = i
+                    break;
+                }
+            }
+            let line1String = keyword.prefix(newLinePosition)
+            let widthKeyword : CGFloat = String(line1String).width(font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
+            return widthKeyword
+        }
     }
-    
 }

@@ -180,26 +180,13 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.hotKeyCollectionView {
             let hotKeyObj : HotKeyModel = self.hotKeys[indexPath.row]
-            let widthKeyword : CGFloat = hotKeyObj.keyWord.width(withConstraintedHeight: 200 * AppUtil.displayScale, font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
-            
-            if AppUtil.getNumberOfWord(text: hotKeyObj.keyWord) == 1 {
-                return CGSize(width: widthKeyword + 36*AppUtil.displayScale, height: 200 * AppUtil.displayScale)
-            }
-            else {
-                return CGSize(width: widthKeyword/1.5 + 36*AppUtil.displayScale, height: 200 * AppUtil.displayScale)
-            }
+            return CGSize(width: AppUtil.caculateWidthForCollectionCell(keyword: hotKeyObj.keyWord) + 36*AppUtil.displayScale, height: 200 * AppUtil.displayScale)
         }
         else {
             
             let recentKeyObj : RecentKeyModel = self.recentKeys[self.recentKeys.count - indexPath.row - 1]
-            let widthKeyword : CGFloat = recentKeyObj.keyWord.width(withConstraintedHeight: 70 * AppUtil.displayScale, font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
-            
-            if AppUtil.getNumberOfWord(text: recentKeyObj.keyWord) == 1 {
-                return CGSize(width: widthKeyword + 32*AppUtil.displayScale, height: 70 * AppUtil.displayScale)
-            }
-            else {
-                return CGSize(width: widthKeyword/1.5 + 32*AppUtil.displayScale, height: 70 * AppUtil.displayScale)
-            }
+            return CGSize(width: AppUtil.caculateWidthForCollectionCell(keyword: recentKeyObj.keyWord) + 32*AppUtil.displayScale, height: 70 * AppUtil.displayScale)
+
         }
     }
 }
