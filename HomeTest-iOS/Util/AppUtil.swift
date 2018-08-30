@@ -15,7 +15,7 @@ final class AppUtil {
     static let displayScale: CGFloat = UIScreen.main.bounds.width/375.0
     
     static func getNumberOfWord(text: String) -> Int {
-        let chararacterSet = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
+        let chararacterSet = CharacterSet.whitespacesAndNewlines
         let components = text.components(separatedBy: chararacterSet)
         let words = components.filter { !$0.isEmpty }
         return words.count

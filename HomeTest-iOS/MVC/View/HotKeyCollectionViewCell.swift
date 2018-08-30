@@ -13,6 +13,7 @@ class HotKeyCollectionViewCell: UICollectionViewCell {
     static var HOT_KEY_NIB_NAME = "HotKeyCollectionViewCell"
     static var HOT_KEY_IDENTIFIER = "HotKeyCollectionViewCell"
     
+    @IBOutlet weak var widthKeywordLblConstrant: NSLayoutConstraint!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var keywordView: UIView!
@@ -26,32 +27,18 @@ class HotKeyCollectionViewCell: UICollectionViewCell {
         self.keywordLabel.font = UIFont.systemFont(ofSize: 14 * AppUtil.displayScale)
     }
     
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        //Exhibit A - We need to cache our calculation to prevent a crash.
-        if !isHeightCalculated {
-            setNeedsLayout()
-            layoutIfNeeded()
-            let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-            var newFrame = layoutAttributes.frame
-            newFrame.size.width = CGFloat(ceilf(Float(size.width)))
-            layoutAttributes.frame = newFrame
-            isHeightCalculated = true
-        }
-        return layoutAttributes
-    }
-    
     func updateViewCell(model: HotKeyModel, keywordColor: UIColor) {
         self.model = model
         if AppUtil.getNumberOfWord(text: model.keyWord) == 1 {
             self.keywordLabel.numberOfLines = 1
         }
         else {
-            self.keywordLabel.numberOfLines = 2
+            self.keywordLabel.numberOfLines = 3
         }
         
         self.keywordLabel.text = model.keyWord
         self.keywordView.backgroundColor = keywordColor
-        
+        //self.widthKeywordLblConstrant.constant = 100
         if let urlImage = URL(string: model.iconURLString) {
             self.iconImageView.af_setImage(withURL: urlImage,
                                                placeholderImage: nil,

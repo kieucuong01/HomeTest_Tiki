@@ -14,23 +14,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HotKeyCollectionViewCell" id="gTV-IL-0wX" customClass="HotKeyCollectionViewCell" customModule="HomeTest_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+            <rect key="frame" x="0.0" y="0.0" width="112" height="147"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+                <rect key="frame" x="0.0" y="0.0" width="112" height="147"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-dl-VQH">
-                        <rect key="frame" x="0.0" y="0.0" width="237" height="271"/>
+                        <rect key="frame" x="0.0" y="0.0" width="112" height="147"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-AZ-wxB">
-                                <rect key="frame" x="0.0" y="0.0" width="237" height="170.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="112" height="88"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mH7-j0-50u">
-                                <rect key="frame" x="0.0" y="180.5" width="237" height="90.5"/>
+                                <rect key="frame" x="0.0" y="98" width="112" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cZ-7U-tpt">
-                                        <rect key="frame" x="16" y="8" width="205" height="74.5"/>
+                                        <rect key="frame" x="16" y="8" width="80" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,13 +98,13 @@
                 <constraint firstAttribute="bottom" secondItem="3R5-dl-VQH" secondAttribute="bottom" id="w2Y-4U-cZx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="237" height="271"/>
+            <size key="customSize" width="112" height="147"/>
             <connections>
                 <outlet property="iconImageView" destination="SNn-AZ-wxB" id="uTw-2U-UXr"/>
                 <outlet property="keywordLabel" destination="4cZ-7U-tpt" id="1nT-Rn-sq1"/>
                 <outlet property="keywordView" destination="mH7-j0-50u" id="13h-Ld-XXD"/>
             </connections>
-            <point key="canvasLocation" x="88.5" y="235.5"/>
+            <point key="canvasLocation" x="26" y="173.5"/>
         </collectionViewCell>
     </objects>
 </document>

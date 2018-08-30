@@ -38,17 +38,19 @@ class ViewController: UIViewController {
     private func configView(){
         self.hotKeyCollectionView.delegate = self
         self.hotKeyCollectionView.dataSource = self
+        
         self.recentKeyCollectionView.dataSource = self
         self.recentKeyCollectionView.delegate = self
         
+        // Set horizontal scroll for collection view
         if let flowLayout = hotKeyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 100 * AppUtil.displayScale,height: 200 * AppUtil.displayScale)
             flowLayout.scrollDirection = .horizontal
         }
         if let flowLayout2 = recentKeyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout2.estimatedItemSize = CGSize(width: 100 * AppUtil.displayScale,height: 70 * AppUtil.displayScale)
             flowLayout2.scrollDirection = .horizontal
         }
+        
+        // Setup color
         self.arrayColor = [AppUtil.hexStringToUIColor(hex: "#16702e"),
         AppUtil.hexStringToUIColor(hex: "#005a51"),
         AppUtil.hexStringToUIColor(hex: "#996c00"),
@@ -162,5 +164,42 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // CLICK HOT KEY OR RECENT KEY
+    }
+}
+
+extension ViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if collectionView == self.hotKeyCollectionView {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.hotKeyCollectionView {
+            let hotKeyObj : HotKeyModel = self.hotKeys[indexPath.row]
+            let widthKeyword : CGFloat = hotKeyObj.keyWord.width(withConstraintedHeight: 200 * AppUtil.displayScale, font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
+            
+            if AppUtil.getNumberOfWord(text: hotKeyObj.keyWord) == 1 {
+                return CGSize(width: widthKeyword + 36*AppUtil.displayScale, height: 200 * AppUtil.displayScale)
+            }
+            else {
+                return CGSize(width: widthKeyword/1.5 + 36*AppUtil.displayScale, height: 200 * AppUtil.displayScale)
+            }
+        }
+        else {
+            
+            let recentKeyObj : RecentKeyModel = self.recentKeys[self.recentKeys.count - indexPath.row - 1]
+            let widthKeyword : CGFloat = recentKeyObj.keyWord.width(withConstraintedHeight: 70 * AppUtil.displayScale, font: UIFont.systemFont(ofSize: 14 * AppUtil.displayScale))
+            
+            if AppUtil.getNumberOfWord(text: recentKeyObj.keyWord) == 1 {
+                return CGSize(width: widthKeyword + 32*AppUtil.displayScale, height: 70 * AppUtil.displayScale)
+            }
+            else {
+                return CGSize(width: widthKeyword/1.5 + 32*AppUtil.displayScale, height: 70 * AppUtil.displayScale)
+            }
+        }
     }
 }
